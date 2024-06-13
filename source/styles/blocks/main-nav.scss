@@ -1,0 +1,118 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-nav__toggle {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  background-color: rgba(variables.$base-color-4, 0);
+  color: variables.$base-color-3;
+  border: none;
+  right: 0;
+  top: 0;
+  margin-top: 10px;
+  margin-right: 13px;
+  width: 40px;
+  height: 40px;
+  padding: 8px 7px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @include mixins.tablet {
+    display: none;
+  }
+}
+
+.main-nav__toggle--closed::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background-color: variables.$base-color-3;
+  box-shadow:
+    0 8px 0 0 variables.$base-color-3,
+    0 -8px 0 0 variables.$base-color-3;
+}
+
+.main-nav__toggle--opened::before,
+.main-nav__toggle--opened::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: variables.$base-color-3;
+}
+
+.main-nav__toggle--opened::after {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.main-nav__toggle--opened::before {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.main-nav__wrapper {
+  @include mixins.mobile {
+    width: 100%;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  @include mixins.tablet {
+    position: relative;
+  }
+}
+
+.main-nav__toggle--closed ~ .main-nav__wrapper {
+  @include mixins.mobile {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 300ms linear, visibility 0s linear 500ms;
+  }
+}
+
+.main-nav__toggle--opened ~ .main-nav__wrapper {
+  @include mixins.mobile {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 300ms linear, visibility 0s linear;
+  }
+}
+
+.main-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mixins.mobile {
+    flex-direction: column;
+  }
+
+  @include mixins.tablet {
+    max-width: 500px;
+    flex-direction: row;
+    align-items: baseline;
+    row-gap: 10px;
+    margin-right: -14px;
+  }
+
+  @include mixins.desktop {
+    max-width: 600px;
+  }
+}
+
+.main-nav__activities {
+  @include mixins.list-base;
+}

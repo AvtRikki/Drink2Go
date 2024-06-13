@@ -1,0 +1,43 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.site-list {
+  @include mixins.font-info(12px, 16px);
+  @include mixins.list-base;
+  font-family: inherit;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-list__item {
+  @include mixins.mobile {
+    &:first-child .site-list__link {
+      border-top: 1px solid variables.$base-color-2;
+    }
+  }
+}
+
+.site-list__link {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: variables.$base-color-3;
+  position: relative;
+
+  &:hover {
+    color: rgba(variables.$base-color-3, 0.6);
+  }
+
+  &:active {
+    color: rgba(variables.$base-color-3, 0.3);
+  }
+
+  @include mixins.mobile {
+    display: block;
+    background-color: variables.$base-color-4;
+    color: variables.$base-color-3;
+    padding: 20px 20px 21px;
+    border-bottom: 1px solid variables.$base-color-2;
+  }
+}

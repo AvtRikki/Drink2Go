@@ -1,0 +1,26 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.navigation-topic__title {
+  @include mixins.font-info(14px, 20px, 700);
+  color: $base-color-1;
+  margin: 0;
+  padding: 15px 0;
+}
+
+.navigation-topic__list {
+  @include mixins.list-base;
+}
+
+.navigation-topic__item {
+  margin-bottom: 16px;
+}
+
+.navigation-topic__item-link {
+  @include mixins.font-info(14px, 16px, 500);
+  position: relative;
+  color: $base-color-3;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}

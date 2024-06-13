@@ -1,0 +1,28 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.contacts__link {
+  @include mixins.font-info(14px, 20px);
+  text-transform: none;
+  padding-left: 20px;
+}
+
+.contacts__link--address::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 13px;
+  height: 16px;
+  background: url(../../icons/stack.svg#address-icon) no-repeat center;
+}
+
+.contacts__link--telephone::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 13px;
+  height: 16px;
+  background: url(../../icons/stack.svg#phone-icon) no-repeat center;
+}

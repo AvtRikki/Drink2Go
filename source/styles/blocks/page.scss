@@ -1,0 +1,35 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.page {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.page__body {
+  @include mixins.font-info(14px, 20px);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$base-color-4;
+  color: variables.$base-color-3;
+}
+
+.page__container {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include mixins.mobile {
+    padding: 0 20px;
+  }
+
+  @include mixins.tablet {
+    padding: 0 30px;
+  }
+
+  @include mixins.desktop {
+    padding: 0;
+  }
+}

@@ -1,5 +1,33 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  background-color: variables.$base-color-4;
+}
+
+.header__container {
+  position: relative;
+}
+
+.header__logo {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.header__logo-description {
+  @include mixins.font-info(12px, 16px);
+  display: none;
+  margin: 0;
+
+  @include mixins.desktop {
+    display: block;
+  }
 }

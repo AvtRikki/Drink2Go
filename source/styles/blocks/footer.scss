@@ -1,0 +1,74 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.footer {
+  padding-top: 20px;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: min-content 1fr min-content min-content;
+  grid-template-areas:
+    "logo social"
+    "navigation navigation"
+    "developer developer";
+}
+
+.footer__logo {
+  grid-area: logo;
+}
+
+.footer__logo-description {
+  display: none;
+}
+
+.footer__social {
+  grid-area: social;
+}
+
+.footer__navigation-list {
+  @include mixins.list-base;
+  grid-area: navigation;
+}
+
+.footer__navigation-item {
+  border-top: 1px solid $base-color-2;
+}
+
+.footer__navigation-item:last-child {
+  border-bottom: 1px solid $base-color-2;
+}
+
+.footer__developer {
+  grid-area: developer;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__developer-link {
+  @include mixins.font-info(12px, 16px);
+  position: relative;
+  text-decoration: none;
+  color: $base-color-5;
+  padding-right: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 13px;
+    height: 16px;
+    mask: url(../../icons/stack.svg#developer-icon) no-repeat center;
+    background-color: $base-color-5;
+  }
+
+  &:hover::after {
+    background-color: $base-color-1;
+  }
+
+  &:active::after {
+    background-color: $alternate-color-2;
+  }
+}

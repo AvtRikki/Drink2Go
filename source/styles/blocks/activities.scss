@@ -1,0 +1,20 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.activities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.activities__link {
+  color: variables.$base-color-3;
+  text-transform: uppercase;
+}
+
+.activities__item-title {
+  @include mixins.mobile {
+    display: none;
+  }
+}
+

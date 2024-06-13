@@ -1,0 +1,32 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.social {
+  @include mixins.list-base;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
+  padding: 0 0 10px 0;
+}
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 4px;
+  color: variables.$base-color-5;
+
+  &:hover {
+    color: variables.$base-color-1;
+    background-color: variables.$base-color-2;
+  }
+
+  &:active {
+    color: variables.$base-color-1;
+    background-color: variables.$alternate-color-3;
+  }
+}
