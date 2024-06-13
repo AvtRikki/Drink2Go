@@ -201,8 +201,8 @@
           </ul>
         </div>
       </section>
-      <section class="catalog" data-test="catalog">
-        <div class="page__container catalog__container">
+      <section class="catalog page__container" data-test="catalog">
+        <div class="catalog__container">
           <h2 class="catalog__title section-title">Каталог</h2>
           <p class="catalog__description">Каталог кофейных напитков</p>
           <form class="catalog__form form" id="catalog-filter" action="https://echo.htmlacademy.ru" method="get">
@@ -318,12 +318,14 @@
             </div>
           </form>
           <div class="catalog__filters">
-            <p class="catalog__filters-title">Сортировка:</p>
-            <select class="catalog__sorting" name="catalog-sorting" aria-label="Сортировка">
-              <option class="catalog__sorting-item" value="default" selected>По умолчанию</option>
-              <option class="catalog__sorting-item" value="expensive-first">Сначала дорогие</option>
-              <option class="catalog__sorting-item" value="cheap-first">Сначала дешёвые</option>
-            </select>
+            <p class="catalog__sorting-title">Сортировка:</p>
+            <div class="catalog__sorting-wrapper">
+              <select class="catalog__sorting" name="catalog-sorting" aria-label="Сортировка">
+                <option class="catalog__sorting-item" value="default" selected>по умолчанию</option>
+                <option class="catalog__sorting-item" value="expensive-first">возрастание</option>
+                <option class="catalog__sorting-item" value="cheap-first">убывание</option>
+              </select>
+          </div>
           </div>
         </div>
         <ul class="catalog__list">
@@ -342,7 +344,7 @@
             <p class="catalog-card__description">
               Кофе без кофеина из Эфиопии с натуральным фермерским молоком
             </p>
-            <div>
+            <div class="catalog-card__price-wrapper">
               <span class="catalog-card__price">225₽</span>
               <a class="catalog-card__button button button--primary" href="#">В корзину</a>
             </div>
@@ -362,7 +364,7 @@
             <p class="catalog-card__description">
               Кофе без кофеина из Эфиопии с натуральным фермерским молоком
             </p>
-            <div>
+            <div class="catalog-card__price-wrapper">
               <span class="catalog-card__price">225₽</span>
               <a class="catalog-card__button button button--primary" href="#">В корзину</a>
             </div>
@@ -382,7 +384,7 @@
             <p class="catalog-card__description">
               Кофе без кофеина из Эфиопии с натуральным фермерским молоком
             </p>
-            <div>
+            <div class="catalog-card__price-wrapper">
               <span class="catalog-card__price">225₽</span>
               <a class="catalog-card__button button button--primary" href="#">В корзину</a>
             </div>
@@ -402,7 +404,7 @@
             <p class="catalog-card__description">
               Кофе без кофеина из Эфиопии с натуральным фермерским молоком
             </p>
-            <div>
+            <div class="catalog-card__price-wrapper">
               <span class="catalog-card__price">225₽</span>
               <a class="catalog-card__button button button--primary" href="#">В корзину</a>
             </div>
@@ -422,7 +424,7 @@
             <p class="catalog-card__description">
               Кофе без кофеина из Эфиопии с натуральным фермерским молоком
             </p>
-            <div>
+            <div class="catalog-card__price-wrapper">
               <span class="catalog-card__price">225₽</span>
               <a class="catalog-card__button button button--primary" href="#">В корзину</a>
             </div>
@@ -442,7 +444,7 @@
             <p class="catalog-card__description">
               Кофе без кофеина из Эфиопии с натуральным фермерским молоком
             </p>
-            <div>
+            <div class="catalog-card__price-wrapper">
               <span class="catalog-card__price">225₽</span>
               <a class="catalog-card__button button button--primary" href="#">В корзину</a>
             </div>
@@ -451,22 +453,23 @@
         <div class="catalog__navigation pagination">
           <ul class="pagination__list">
             <li class="pagination__item">
-              <a class="pagination__link pagination__link-previous" href="#">Назад</a>
+              <a class="pagination__link pagination__link-previous" href="#">
+                <span class="pagination__link--button">Назад</span>
+              </a>
             </li>
             <li class="pagination__item">
               <a class="pagination__link" href="#">1</a>
             </li>
-            <li class="pagination__item pagination__item--active">
-              <a class="pagination__link" href="#">2</a>
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--active" href="#">2</a>
             </li>
             <li class="pagination__item">
               <a class="pagination__link" href="#">3</a>
             </li>
             <li class="pagination__item">
-              <a class="button button-secondary" href="#">10</a>
-            </li>
-            <li class="pagination__item">
-              <a class="pagination__link pagination__link-next" href="#">Вперёд</a>
+              <a class="pagination__link pagination__link-next" href="#">
+                <span class="pagination__link--button">Вперёд</span>
+              </a>
             </li>
           </ul>
         </div>

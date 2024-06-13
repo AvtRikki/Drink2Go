@@ -1,0 +1,9 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.section-title {
+  @include mixins.font-info(12px, 16px, 700);
+  color: $base-color-1;
+  text-align: center;
+  text-transform: uppercase;
+}

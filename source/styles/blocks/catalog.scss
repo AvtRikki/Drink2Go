@@ -1,0 +1,67 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.catalog {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-color: $background-color-1;
+}
+
+.catalog__filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.catalog__sorting-title {
+  @include mixins.font-info(16px, 24px, 600);
+}
+
+.catalog__sorting-wrapper {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    background: url(../../icons/stack.svg#arrow-down-icon) no-repeat center;
+  }
+
+  &:focus-within:after {
+    background: url(../../icons/stack.svg#arrow-up-icon) no-repeat center;
+  }
+
+  &:focus-within .catalog__sorting {
+    background-color: $base-color-4;
+  }
+}
+
+.catalog__sorting {
+  @include mixins.font-info(16px, 24px, 600);
+  background-color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  color: $base-color-1;
+  border-radius: 4px;
+  padding: 4px 30px 4px 10;
+  min-width: 165px;
+  min-height: 32px;
+
+  &:hover {
+    background-color: $base-color-2;
+  }
+}
+
+.catalog__list {
+  @include mixins.list-base;
+  display: grid;
+  grid-template-rows: repeat(6, 420px);
+  gap: 20px;
+}

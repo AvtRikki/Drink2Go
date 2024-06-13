@@ -1,0 +1,8 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.form__group--buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

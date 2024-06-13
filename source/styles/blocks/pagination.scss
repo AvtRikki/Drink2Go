@@ -1,0 +1,42 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.pagination__list {
+  @include mixins.list-base;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.pagination__link {
+  @include mixins.font-info(16px, 24px);
+  display: block;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $base-color-4;
+  color: $base-color-1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination__link-previous {
+  background: url(../../icons/stack.svg#arrow-left-icon) no-repeat center / cover;
+}
+
+.pagination__link-next {
+  background: url(../../icons/stack.svg#arrow-right-icon) no-repeat center / cover;
+}
+
+.pagination__link--active {
+  color: $base-color-3;
+  font-weight: 600;
+  background-color: $background-color-transparent;
+}
+
+.pagination__link--button {
+  display: none;
+}
