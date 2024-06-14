@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Drink2Go</title>
-
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicons/180.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="preload" href="#" type="font/woff2" as="font">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/index.js" defer></script>
@@ -206,108 +209,98 @@
           <h2 class="catalog__title section-title">Каталог</h2>
           <p class="catalog__description">Каталог кофейных напитков</p>
           <form class="catalog__form form" id="catalog-filter" action="https://echo.htmlacademy.ru" method="get">
-            <fieldset class="form__group price-range">
-              <legend class="price-range__title">Цена</legend>
-              <div class="price-range__container">
-                <div class="price-range__bar-control">
-                  <button class="price-range__toggle price-range__toggle-min" type="button">
-                    <span class="visually-hidden">Уменьшить цену.</span>
-                  </button>
-                  <button class="price-range__toggle price-range__toggle-max" type="button">
-                    <span class="visually-hidden">Увеличить цену.</span>
-                  </button>
-                </div>
-              </div>
-              <div class="price-range__inputs">
-                <label class="price-range__input-label">
+            <fieldset class="form__group">
+              <legend class="form__title">Цена</legend>
+              <div class="form__slider"></div>
+              <div class="form__slider-inputs">
+                <label class="form__filter-input-label">
                   <span class="visually-hidden">Цена от.</span>
-                  <input class="price-range__input price-range__input-min" type="number" name="min-price" placeholder="0">
+                  <input class="form__slider-input form__slider-min" type="number" name="min-price" placeholder="0">
                 </label>
-                <span class="price-range__delimeter">-</span>
-                <label class="price-range__input-label">
+                <label class="form__filter-input-label">
                   <span class="visually-hidden">Цена до.</span>
-                  <input class="price-range__input price-range__input-max" type="number" name="max-price" placeholder="900" value="900">
+                  <input class="form__slider-input form__slider-max" type="number" name="max-price" placeholder="900" value="900">
                 </label>
               </div>
             </fieldset>
-            <fieldset class="form__group milk-inclusion">
-              <legend class="milk-inclusion__title">Наличие молока</legend>
-              <ul class="milk-inclusion__items">
-                <li class="milk-inclusion__item">
-                  <label class="milk-inclusion__input-label">
-                    <input class="milk-inclusion__input visually-hidden" type="radio" value="no-matter"
+            <fieldset class="form__group">
+              <legend class="form__title">Наличие молока</legend>
+              <ul class="form__filter-items">
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="radio" value="no-matter"
                       name="milk-inclusion" checked>
-                    <span class="milk-inclusion__input-mark form__radio-mark"></span>
-                    <span class="milk-inclusion__input-title">Неважно</span>
+                    <span class="form__filter-input-mark form__radio-mark"></span>
+                    <span class="form__filter-input-title form__text">Неважно</span>
                   </label>
                 </li>
-                <li class="milk-inclusion__item">
-                  <label class="milk-inclusion__input-label">
-                    <input class="milk-inclusion__input visually-hidden" type="radio" value="animal-only"
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="radio" value="animal-only"
                       name="milk-inclusion">
-                    <span class="milk-inclusion__input-mark form__radio-mark"></span>
-                    <span class="milk-inclusion__input-title">Только животное</span>
+                    <span class="form__filter-input-mark form__radio-mark"></span>
+                    <span class="form__filter-input-title form__text">Только животное</span>
                   </label>
                 </li>
-                <li class="milk-inclusion__item">
-                  <label class="milk-inclusion__input-label">
-                    <input class="milk-inclusion__input visually-hidden" type="radio" value="plant-only"
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="radio" value="plant-only"
                       name="milk-inclusion">
-                    <span class="milk-inclusion__input-mark form__radio-mark"></span>
-                    <span class="milk-inclusion__input-title">Только растительное</span>
+                    <span class="form__filter-input-mark form__radio-mark"></span>
+                    <span class="form__filter-input-title form__text">Только растительное</span>
                   </label>
                 </li>
-                <li class="milk-inclusion__item">
-                  <label class="milk-inclusion__input-label">
-                    <input class="milk-inclusion__input visually-hidden" type="radio" value="no-milk"
-                      name="milk-inclusion">
-                    <span class="milk-inclusion__input-mark form__radio-mark"></span>
-                    <span class="milk-inclusion__input-title">Без молока</span>
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="radio" value="no-milk"
+                      name="milk-inclusion" disabled>
+                    <span class="form__filter-input-mark form__radio-mark"></span>
+                    <span class="form__filter-input-title form__text">Без молока</span>
                   </label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="form__group manufacturer">
-              <legend class="manufacturer__title">Страна произрастания</legend>
-              <ul class="manufacturer__items">
-                <li class="manufacturer__items">
-                  <label class="manufacturer__input-label">
-                    <input class="manufacturer__input visually-hidden" type="checkbox"
+            <fieldset class="form__group">
+              <legend class="form__title">Страна произрастания</legend>
+              <ul class="form__filter-items">
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="checkbox"
                       name="brazil" checked>
-                    <span class="manufacturer__input-mark form__check-mark"></span>
-                    <span class="milk-inclusion__input-title">Бразилия</span>
+                    <span class="form__filter-input-mark form__check-mark"></span>
+                    <span class="form__filter-input-title form__text">Бразилия</span>
                   </label>
                 </li>
-                <li class="manufacturer__items">
-                  <label class="manufacturer__input-label">
-                    <input class="manufacturer__input visually-hidden" type="checkbox"
-                      name="ethiopia" checked>
-                    <span class="manufacturer__input-mark form__check-mark"></span>
-                    <span class="milk-inclusion__input-title">Эфиопия</span>
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="checkbox"
+                      name="ethiopia">
+                    <span class="form__filter-input-mark form__check-mark"></span>
+                    <span class="form__filter-input-title form__text">Эфиопия</span>
                   </label>
                 </li>
-                <li class="manufacturer__items">
-                  <label class="manufacturer__input-label">
-                    <input class="manufacturer__input visually-hidden" type="checkbox"
-                      name="colombia" checked>
-                    <span class="manufacturer__input-mark form__check-mark"></span>
-                    <span class="milk-inclusion__input-title">Колумбия</span>
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="checkbox"
+                      name="colombia">
+                    <span class="form__filter-input-mark form__check-mark"></span>
+                    <span class="form__filter-input-title form__text">Колумбия</span>
                   </label>
                 </li>
-                <li class="manufacturer__items">
-                  <label class="manufacturer__input-label">
-                    <input class="manufacturer__input visually-hidden" type="checkbox"
-                      name="costa-rica" checked>
-                    <span class="manufacturer__input-mark form__check-mark"></span>
-                    <span class="milk-inclusion__input-title">Коста-Рика</span>
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="checkbox"
+                      name="costa-rica">
+                    <span class="form__filter-input-mark form__check-mark"></span>
+                    <span class="form__filter-input-title form__text">Коста-Рика</span>
                   </label>
                 </li>
-                <li class="manufacturer__items">
-                  <label class="manufacturer__input-label">
-                    <input class="manufacturer__input visually-hidden" type="checkbox"
-                      name="peru" checked>
-                    <span class="manufacturer__input-mark form__check-mark"></span>
-                    <span class="milk-inclusion__input-title">Перу</span>
+                <li class="form__filter-item">
+                  <label class="form__filter-input-label">
+                    <input class="form__control-input visually-hidden" type="checkbox"
+                      name="peru" disabled>
+                    <span class="form__filter-input-mark form__check-mark"></span>
+                    <span class="form__filter-input-title form__text">Перу</span>
                   </label>
                 </li>
               </ul>
@@ -453,21 +446,21 @@
         <div class="catalog__navigation pagination">
           <ul class="pagination__list">
             <li class="pagination__item">
-              <a class="pagination__link pagination__link-previous" href="#">
+              <a class="pagination__link pagination__link-previous link" href="#">
                 <span class="pagination__link--button">Назад</span>
               </a>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link" href="#">1</a>
+              <a class="pagination__link link" href="#">1</a>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link pagination__link--active" href="#">2</a>
+              <a class="pagination__link pagination__link--active link" href="#">2</a>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link" href="#">3</a>
+              <a class="pagination__link link" href="#">3</a>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link pagination__link-next" href="#">
+              <a class="pagination__link pagination__link-next link" href="#">
                 <span class="pagination__link--button">Вперёд</span>
               </a>
             </li>
@@ -585,5 +578,6 @@
         </div>
       </div>
     </footer>
+    <script src="vendor/nouislider/nouislider.js"></script>
   </body>
 </html>

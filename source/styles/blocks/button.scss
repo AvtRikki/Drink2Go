@@ -34,13 +34,16 @@
 
   &:hover, &:focus {
     background-color: $alternate-color-1;
+    color: $base-color-4;
   }
 
   &:active {
     background-color: $alternate-color-2;
+    color: $base-color-4;
   }
 
   &:disabled {
     background-color: $alternate-color-4;
+    color: $base-color-4;
   }
 }
