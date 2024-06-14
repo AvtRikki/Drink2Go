@@ -1,0 +1,24 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.advertisement {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.advertisement__price-before {
+  @include mixins.font-info(16px, 32px);
+  text-decoration-line: line-through;
+  color: $base-color-1;
+  margin: 0;
+  margin-right: 6px;
+}
+
+.advertisement__price-after {
+  @include mixins.font-info(20px, 32px, 600);
+  margin: 0;
+  margin-right: 18px;
+}
