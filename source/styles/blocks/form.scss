@@ -41,8 +41,8 @@
 
 .form__slider-input {
   @include mixins.font-info(16px, 24px, 500);
-  width: 110px;
-  height: 35px;
+  width: 118px;
+  height: 40px;
   text-align: center;
   border: 2px solid $alternate-color-1;
   padding: 8px 10px;
@@ -96,35 +96,75 @@
   background-color: $base-color-4;
   border-radius: 50%;
   padding: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-color: $base-color-1;
+    border-radius: 50%;
+    display: none;
+  }
 }
 
-.form__radio-mark::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  background-color: $base-color-1;
-  border-radius: 50%;
-  display: none;
-}
-
-.form__control-input:checked ~ .form__radio-mark {
+.form__control-input {
+  &:checked ~ .form__radio-mark {
     border: 2px solid $base-color-1;
-}
+  }
 
-.form__control-input:checked ~ .form__radio-mark::before {
-  display: block;
-}
+  &:checked ~ .form__radio-mark::before {
+    display: block;
+  }
 
-.form__control-input:disabled ~ .form__radio-mark {
-  border: 2px solid $alternate-color-4;
-}
+  &:checked:disabled ~ .form__radio-mark::before {
+    background-color: $alternate-color-4;
+    display: block;
+  }
 
-.form__control-input:disabled ~ .form__text {
-  color: $base-color-5;
+  &:focus:not(:disabled):not(:checked) ~ .form__radio-mark,
+  &:hover:not(:disabled):not(:checked) ~ .form__radio-mark {
+    border: 2px solid $alternate-color-1;
+  }
+
+  &:focus:not(:disabled):not(:checked) ~ .form__radio-mark::before,
+  &:hover:not(:disabled):not(:checked) ~ .form__radio-mark::before {
+    background-color: $alternate-color-3;
+    display: block;
+  }
+
+  &:disabled ~ .form__radio-mark {
+    border: 2px solid $alternate-color-4;
+  }
+
+  &:focus:not(:disabled):not(:checked) ~ .form__check-mark,
+  &:hover:not(:disabled):not(:checked) ~ .form__check-mark {
+    border: 2px solid $alternate-color-1;
+    background-color: $alternate-color-3;
+  }
+
+  &:checked ~ .form__check-mark {
+    background-color: $base-color-1;
+  }
+
+  &:checked ~ .form__check-mark::before {
+    left: 71%;
+  }
+
+  &:checked:disabled ~ .form__check-mark::before {
+    background-color: $base-color-5;
+  }
+
+  &:disabled ~ .form__check-mark {
+    background-color: $alternate-color-4;
+  }
+
+  &:disabled ~ .form__text {
+    color: $base-color-5;
+  }
 }
 
 .form__check-mark {
@@ -142,24 +182,12 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 30%;
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
   background-color: $base-color-4;
   border-radius: 50%;
-}
-
-.form__control-input:checked ~ .form__check-mark {
-  background-color: $base-color-1;
-}
-
-.form__control-input:checked ~ .form__check-mark::before {
-  left: 73%;
-}
-
-.form__control-input:disabled ~ .form__check-mark {
-  background-color: $alternate-color-4;
 }
 
 .form__check-mark ~ .form__text {
@@ -168,4 +196,87 @@
 
 .form__radio-mark ~ .form__text {
   padding-left: 34px;
+}
+
+.form__slider-wrapper {
+  border: none;
+  align-content: start;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.form__slider {
+  height: 0;
+  margin: 10px 0 24px;
+  padding: 0 12px;
+  border: 1px solid $alternate-color-4;
+  border-width: 1px 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  .noUi-connects {
+    overflow: visible;
+  }
+
+  .noUi-connect {
+    top: -2px;
+    height: 4px;
+    background-color: $alternate-color-1;
+  }
+
+  .noUi-handle {
+    top: -12px;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid $alternate-color-1;
+    border-radius: 50%;
+    background-color: $base-color-4;
+    box-shadow: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .noUi-touch-area {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: $base-color-4;
+    background-clip: content-box;
+  }
+
+  .noUi-handle:focus .noUi-touch-area,
+  .noUi-handle:hover .noUi-touch-area {
+    background-color: $alternate-color-3;
+  }
+
+  .noUi-handle:focus {
+    outline: none;
+  }
+
+  .noUi-handle:hover {
+    cursor: pointer;
+  }
+
+  .noUi-handle:active .noUi-touch-area {
+    background-color: $base-color-1;
+  }
+}
+
+.form__range-slider[disabled] {
+  .noUi-connect {
+    background-color: $base-color-5;
+  }
+
+  .noUi-handle {
+    border-color: $base-color-5;
+    background-color: $background-color-1;
+    pointer-events: none;
+  }
 }

@@ -10,7 +10,6 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="preload" href="#" type="font/woff2" as="font">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
     <header class="header" data-test="header">
@@ -67,7 +66,7 @@
             </a>
           </li>
         </ul>
-        <button class="main-nav__toggle link" type="button">
+        <button class="main-nav__toggle link js-toggle-button" type="button">
           <span class="visually-hidden">Открыть меню.</span>
         </button>
       </div>
@@ -168,16 +167,26 @@
             </div>
           </li>
         </ul>
-        <button class="hero__page-button--prev" type="button">
-          <span class="visually-hidden">Назад</span>
-        </button>
-        <button class="hero__page-button--next" type="button">
-          <span class="visually-hidden">Вперед</span>
-        </button>
-        <div class="hero__pagination">
+        <div class="hero__pagination slider-pagination">
           <div class="hero__page-item hero__page-item--active"></div>
           <div class="hero__page-item"></div>
           <div class="hero__page-item"></div>
+        </div>
+        <div class="hero__slider-container ">
+          <div class="hero__slider-navigation">
+            <button class="hero__page-button hero__page-button--before slider-button-prev" type="button" disabled>
+              <span class="visually-hidden">Назад</span>
+              <svg class="hero__page-button-icon" aria-hidden="true" focusable="false" width="11" height="20">
+                <use href="icons/stack.svg#arrow-left-icon"></use>
+              </svg>
+            </button>
+            <button class="hero__page-button hero__page-button--after slider-button-next" type="button">
+              <span class="visually-hidden">Вперед</span>
+              <svg class="hero__page-button-icon" aria-hidden="true" focusable="false" width="11" height="20">
+                <use href="icons/stack.svg#arrow-left-icon"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="advantages" data-test="features">
@@ -211,17 +220,19 @@
           <form class="catalog__form form" id="catalog-filter" action="https://echo.htmlacademy.ru" method="get">
             <fieldset class="form__group">
               <legend class="form__title">Цена</legend>
-              <div class="form__slider"></div>
-              <div class="form__slider-inputs">
-                <label class="form__filter-input-label">
-                  <span class="visually-hidden">Цена от.</span>
-                  <input class="form__slider-input form__slider-min" type="number" name="min-price" placeholder="0">
-                </label>
-                <label class="form__filter-input-label">
-                  <span class="visually-hidden">Цена до.</span>
-                  <input class="form__slider-input form__slider-max" type="number" name="max-price" placeholder="900" value="900">
-                </label>
-              </div>
+              <!-- <div class="form__slider-wrapper"> -->
+                <div class="form__slider"></div>
+                <div class="form__slider-inputs">
+                  <label class="form__filter-input-label">
+                    <span class="visually-hidden">Цена от.</span>
+                    <input class="form__slider-input form__slider-min" type="number" name="min-price" placeholder="0">
+                  </label>
+                  <label class="form__filter-input-label">
+                    <span class="visually-hidden">Цена до.</span>
+                    <input class="form__slider-input form__slider-max" type="number" name="max-price" placeholder="900" value="900">
+                  </label>
+                </div>
+              <!-- </div> -->
             </fieldset>
             <fieldset class="form__group">
               <legend class="form__title">Наличие молока</legend>
@@ -578,6 +589,7 @@
         </div>
       </div>
     </footer>
-    <script src="vendor/nouislider/nouislider.js"></script>
+    <script src="vendor/nouislider/nouislider.js" defer></script>
+    <script src="scripts/index.js" type="module"></script>
   </body>
 </html>
