@@ -2,12 +2,17 @@
 @use "../common/mixins.scss";
 
 .form {
-  display: grid;
 
   @include mixins.tablet {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     row-gap: 40px;
+  }
+
+  @include mixins.desktop {
+    display: flex;
+    flex-direction: column;
   }
 }
 

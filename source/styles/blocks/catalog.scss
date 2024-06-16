@@ -7,15 +7,39 @@
   background-color: $background-color-1;
 }
 
+.catalog__container {
+  @include mixins.desktop {
+    grid-template-columns: 318px 1fr;
+    grid-template-areas:
+      "title title title"
+      "description description description"
+      "form fiter filter"
+      "form cards cards"
+      "form pagination pagination";
+    column-gap: 30px;
+    display: grid;
+  }
+}
+
+.catalog__title {
+  grid-area: title;
+}
+
 .catalog__description {
   @include mixins.font-info(24px, 36px, 700);
+  grid-area: description;
   margin: 0;
   padding: 0;
   text-align: center;
   margin-bottom: 20px;
 }
 
+.catalog__form {
+  grid-area: form;
+}
+
 .catalog__filters {
+  grid-area: filter;
   display: flex;
   align-items: center;
 
@@ -77,6 +101,7 @@
 .catalog__list {
   @include mixins.list-base;
   display: grid;
+  grid-area: cards;
 
   @include mixins.mobile {
     grid-template-rows: repeat(6, 420px);
@@ -91,4 +116,8 @@
   @include mixins.desktop {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.catalog__navigation {
+  grid-area: pagination;
 }

@@ -7,6 +7,7 @@
 
 .hero__image-wrapper  {
   display: block;
+  grid-area: image;
 
   @include mixins.tablet {
     order: 2;
@@ -75,12 +76,25 @@
   visibility: visible;
 }
 
-.hero__container {
-  @include mixins.mobile {
-    display: flex;
+.hero__content-wrapper {
+  grid-area: content;
+
+  @include mixins.desktop {
+    text-align: left;
     flex-direction: column;
-    align-items: center;
-    height: 100%;
+    justify-content: center;
+    padding-bottom: 8px;
+    display: flex;
+  }
+}
+
+.hero__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+  @include mixins.mobile {
     padding: 20px 20px 60px;
   }
 
@@ -88,9 +102,11 @@
     padding: 60px 20px 20px;
   }
 
-  @include mixins.tablet {
+  @include mixins.desktop {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image content";
+    gap: 30px;
   }
 }
 
@@ -102,12 +118,26 @@
   @include mixins.font-info(36px, 48px, 700);
   margin: 4px 0 10px;
   letter-spacing: 0.02em;
-  text-align: center;
+
+  @include mixins.mobile {
+    text-align: center;
+  }
+
+  @include mixins.desktop {
+    text-align: left;
+  }
 }
 
 .hero__description {
   margin: 0 0 20px 0;
-  text-align: center;
+
+  @include mixins.mobile {
+    text-align: center;
+  }
+
+  @include mixins.desktop {
+    text-align: left;
+  }
 }
 
 .hero__slider-container {
