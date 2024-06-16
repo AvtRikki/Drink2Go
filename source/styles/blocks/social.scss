@@ -7,8 +7,15 @@
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: end;
   padding: 0 0 10px 0;
+
+  @include mixins.mobile {
+    justify-content: end;
+  }
+
+  @include mixins.desktop {
+    justify-content: start;
+  }
 }
 
 .social__link {

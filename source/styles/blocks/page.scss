@@ -28,8 +28,4 @@
   @include mixins.tablet {
     padding: 0 30px;
   }
-
-  @include mixins.desktop {
-    padding: 0;
-  }
 }

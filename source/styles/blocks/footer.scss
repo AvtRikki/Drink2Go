@@ -7,12 +7,21 @@
 
 .footer__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-template-columns: min-content 1fr min-content min-content;
   grid-template-areas:
-    "logo social"
-    "navigation navigation"
-    "developer developer";
+  "logo social"
+  "navigation navigation"
+  "developer developer";
+
+  @include mixins.desktop {
+    grid-template-columns: max-content 1fr;
+    column-gap: 30px;
+    grid-template-areas:
+      "logo        navigation"
+      "description navigation"
+      "social      navigation"
+      "developer   developer";
+  }
 }
 
 .footer__logo {
@@ -21,6 +30,12 @@
 
 .footer__logo-description {
   display: none;
+  margin: 0;
+  grid-area: description;
+
+  @include mixins.desktop {
+    display: block;
+  }
 }
 
 .footer__social {
