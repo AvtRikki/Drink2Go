@@ -2,8 +2,8 @@
 @use "../common/mixins.scss";
 
 .catalog {
-  padding-top: 50px;
-  padding-bottom: 60px;
+  padding-top: 49px;
+  padding-bottom: 44px;
   background-color: $background-color-1;
 }
 
@@ -23,6 +23,8 @@
 
 .catalog__title {
   grid-area: title;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .catalog__description {
@@ -36,6 +38,7 @@
 
 .catalog__form {
   grid-area: form;
+  margin-bottom: 29px;
 }
 
 .catalog__filters {
@@ -45,6 +48,7 @@
 
   @include mixins.mobile {
     justify-content: space-between;
+    padding-left: 3px;
   }
 
   @include mixins.tablet {
@@ -59,11 +63,12 @@
 .catalog__sorting-wrapper {
   position: relative;
   display: inline-block;
+  padding: 9px;
 
   &::after {
     content: "";
     position: absolute;
-    right: 10px;
+    right: 19px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;

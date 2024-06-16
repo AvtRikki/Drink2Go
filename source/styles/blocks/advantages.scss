@@ -2,7 +2,11 @@
 @use "../common/mixins.scss";
 
 .advantages {
-  padding: 50px 0 60px;
+  padding: 40px 0 60px;
+}
+
+.advantages__title {
+  margin-bottom: 5px;
 }
 
 .advantages__description {
@@ -10,7 +14,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 35px;
 }
 
 .advantages__list {
@@ -72,7 +76,7 @@
 }
 
 .advantages__item--speed::before {
-  background: url("./../icons/stack.svg#time-icon") no-repeat center / cover;
+  background: url("../../icons/stack.svg#time-icon") no-repeat center / cover;
 }
 
 .advantages__item--convenience::before {
@@ -90,6 +94,10 @@
 .advantages__item-title {
   @include mixins.font-info(18px, 32px, 700);
   margin: 0;
+
+  @include mixins.mobile {
+    margin-bottom: 4px;
+  }
 }
 
 .advantages__item-description {

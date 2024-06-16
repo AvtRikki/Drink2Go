@@ -1,15 +1,24 @@
 @use "../common/variables.scss";
 @use "../common/mixins.scss";
 
+.navigation-topic {
+  padding-top: 6px;
+  margin-bottom: 27px;
+}
+
 .navigation-topic__title {
   @include mixins.font-info(14px, 20px, 700);
   color: $base-color-1;
-  margin: 0;
   padding: 15px 0;
+  letter-spacing: 0.02em;
+  margin: 0;
+  margin-bottom: 2px;
 }
 
 .navigation-topic__list {
   @include mixins.list-base;
+  position: relative;
+  margin-bottom: 27px;
 }
 
 .navigation-topic__item {
@@ -17,12 +26,13 @@
 }
 
 .navigation-topic__item-link {
-  @include mixins.font-info(14px, 16px, 500);
+  @include mixins.font-info(12px, 16px, 500);
   position: relative;
   color: $base-color-3;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+  letter-spacing: 0.02em;
 
   &:hover,
   &:focus {

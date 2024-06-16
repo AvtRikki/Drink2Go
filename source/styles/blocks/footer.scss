@@ -2,7 +2,7 @@
 @use "../common/mixins.scss";
 
 .footer {
-  padding-top: 20px;
+  padding-top: 17px;
 }
 
 .footer__container {
@@ -52,21 +52,22 @@
   }
 }
 
-.footer__navigation-item {
-  @include mixins.mobile {
-    border-top: 1px solid $base-color-2;
-  }
+.footer__navigation-list::before,
+.footer__navigation-item:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background-color: $base-color-2;
+  transform: translateX(-50%);
 }
 
-.footer__navigation-item:last-child {
-  @include mixins.mobile {
-    border-bottom: 1px solid $base-color-2;
-  }
-}
 
 .footer__developer {
   grid-area: developer;
-  padding: 20px 0;
+  padding: 0;
+  padding-top: 3px;
   display: flex;
   justify-content: center;
 }
@@ -81,7 +82,7 @@
   position: relative;
   text-decoration: none;
   color: $base-color-5;
-  padding-right: 20px;
+  padding-right: 18px;
 
   &:hover {
     color: $base-color-1;

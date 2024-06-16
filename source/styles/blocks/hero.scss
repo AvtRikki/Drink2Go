@@ -11,6 +11,10 @@
   display: block;
   grid-area: image;
 
+  @include mixins.mobile {
+    margin-bottom: 5px;
+  }
+
   @include mixins.tablet {
     order: 2;
   }
@@ -161,7 +165,19 @@
 
 .hero__page-button-icon {
   @include mixins.mobile {
-    margin: 0 auto;
+    margin-left: -2px;
+  }
+}
+
+.hero__page-button--before .hero__page-button-icon {
+  @include mixins.mobile {
+    margin-top: 2px;
+  }
+}
+
+.hero__page-button--after .hero__page-button-icon {
+  @include mixins.mobile {
+    margin-bottom: -2px;
   }
 }
 
@@ -231,4 +247,10 @@
 
 .hero__pagination-item--active {
   background-color: $base-color-1;
+}
+
+.hero__make-order {
+  @include mixins.mobile {
+    @include mixins.font-info(16px, 24px, 400);
+  }
 }

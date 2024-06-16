@@ -1,10 +1,16 @@
 @use "../common/variables.scss";
 @use "../common/mixins.scss";
 
+.contacts {
+  margin-bottom: 21px;
+}
+
 .contacts__link {
   @include mixins.font-info(14px, 20px);
   text-transform: none;
-  padding-left: 20px;
+  padding-top: 2px;
+  padding-left: 19px;
+  letter-spacing: 0;
 }
 
 .contacts__link--address::before {
