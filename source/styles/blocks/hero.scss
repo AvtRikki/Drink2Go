@@ -3,6 +3,8 @@
 
 .hero {
   position: relative;
+  max-width: variables.$view-port-desktop;
+  margin: 0 auto;
 }
 
 .hero__image-wrapper {
@@ -153,7 +155,7 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  max-width: 1440;
+  max-width: variables.$view-port-desktop;
   margin: 0 auto;
 }
 
@@ -192,4 +194,41 @@
 
 .hero__page-button--after {
   transform: rotate(180deg);
+}
+
+.hero__pagination {
+  @include mixins.list-base;
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translate(50%);
+  z-index: 1;
+
+  @include mixins.desktop {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.hero__pagination-item {
+  border: none;
+  background: $base-color-4 padding-box content-box;
+  width: 62px;
+  height: 24px;
+  padding: 10px 0;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: $alternate-color-3;
+  }
+
+  &:active {
+    background-color: $base-color-1;
+  }
+}
+
+.hero__pagination-item--active {
+  background-color: $base-color-1;
 }

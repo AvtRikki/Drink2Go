@@ -1,7 +1,7 @@
 const toggleBefore = document.querySelector('.hero__page-button--before');
 const toggleAfter = document.querySelector('.hero__page-button--after');
 const slideItems = document.querySelectorAll('.hero__item');
-const pageList = document.querySelectorAll('.hero__page-item');
+const pageList = document.querySelectorAll('.hero__pagination-item');
 
 const getActivePageIndex = (pages) => {
   const index = Array.from(pages).findIndex((page) => page.classList.contains('hero__item--active'));
@@ -10,10 +10,10 @@ const getActivePageIndex = (pages) => {
 
 const setPageActive = (oldIndex, newIndex) => {
   slideItems[oldIndex].classList.remove('hero__item--active');
-  pageList[oldIndex].classList.remove('hero__page-item--active');
+  pageList[oldIndex].classList.remove('hero__pagination-item--active');
 
   slideItems[newIndex].classList.add('hero__item--active');
-  pageList[newIndex].classList.add('hero__page-item--active');
+  pageList[newIndex].classList.add('hero__pagination-item--active');
 
   toggleBefore.disabled = newIndex === 0;
   toggleAfter.disabled = newIndex === (Array.from(slideItems).length - 1);
@@ -34,7 +34,7 @@ const onToggleAfterClick = () => {
 };
 
 const onPaginationButtonElementClick = ({ target }) => {
-  const currentIndex = getActivePageIndex(pageList);
+  const currentIndex = getActivePageIndex(slideItems);
   const newIndex = Array.from(pageList).indexOf(target);
   if (newIndex !== -1 && newIndex !== currentIndex) {
     setPageActive(currentIndex, newIndex);

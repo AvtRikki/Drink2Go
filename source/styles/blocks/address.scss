@@ -1,6 +1,12 @@
 @use "../common/variables.scss";
 @use "../common/mixins.scss";
 
+
+.address {
+  max-width: variables.$view-port-desktop;
+  margin: 0 auto;
+}
+
 .address__wrapper {
   position: relative;
 }
