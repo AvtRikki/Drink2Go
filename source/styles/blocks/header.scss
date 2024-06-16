@@ -16,7 +16,10 @@
 .header__logo {
   text-decoration: none;
   cursor: pointer;
-  margin-right: auto;
+
+  @include mixins.mobile {
+    margin-right: auto;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -25,6 +28,10 @@
   &:active {
     opacity: 0.6;
   }
+}
+
+.header__logo-image {
+  display: block;
 }
 
 .header__logo-description {

@@ -5,9 +5,16 @@
   @include mixins.list-base;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding-top: 40px;
-  gap: 10px;
+  gap: 20px;
+
+  @include mixins.mobile {
+    justify-content: space-between;
+  }
+
+  @include mixins.tablet {
+    justify-content: flex-end;
+  }
 }
 
 .pagination__link {
@@ -45,5 +52,13 @@
 }
 
 .pagination__link--button {
-  display: none;
+  @include mixins.mobile {
+    display: none;
+  }
+}
+
+.pagination__link--icon {
+  @include mixins.tablet {
+    display: none;
+  }
 }

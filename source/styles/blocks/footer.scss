@@ -30,14 +30,23 @@
 .footer__navigation-list {
   @include mixins.list-base;
   grid-area: navigation;
+
+  @include mixins.tablet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .footer__navigation-item {
-  border-top: 1px solid $base-color-2;
+  @include mixins.mobile {
+    border-top: 1px solid $base-color-2;
+  }
 }
 
 .footer__navigation-item:last-child {
-  border-bottom: 1px solid $base-color-2;
+  @include mixins.mobile {
+    border-bottom: 1px solid $base-color-2;
+  }
 }
 
 .footer__developer {

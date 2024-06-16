@@ -1,6 +1,12 @@
 @use "../common/variables.scss";
 @use "../common/mixins.scss";
 
+.main-nav {
+  @include mixins.tablet {
+    margin: 0 auto;
+  }
+}
+
 .main-nav--closed {
   @include mixins.mobile {
     display: none;
@@ -43,6 +49,7 @@
   border: none;
   width: 60px;
   height: 60px;
+  margin-right: -20px;
 
   @include mixins.tablet {
     display: none;
@@ -53,19 +60,19 @@
   content: "";
   position: absolute;
   transform: translateX(-50%);
-  width: 24px;
+  width: 16px;
   height: 2px;
   background-color: variables.$base-color-3;
   box-shadow:
-    0 8px 0 0 variables.$base-color-3,
-    0 -8px 0 0 variables.$base-color-3;
+    0 5px 0 0 variables.$base-color-3,
+    0 -6px 0 0 variables.$base-color-3;
 }
 
 .main-nav--opened ~ .main-nav__toggle::before,
 .main-nav--opened ~ .main-nav__toggle::after {
   content: "";
   position: absolute;
-  width: 24px;
+  width: 16px;
   height: 2px;
   background-color: variables.$base-color-3;
 }

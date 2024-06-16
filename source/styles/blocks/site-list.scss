@@ -16,6 +16,10 @@
       border-top: 1px solid variables.$base-color-2;
     }
   }
+
+  @include mixins.tablet {
+    height: 100%;
+  }
 }
 
 .site-list__link {
@@ -25,12 +29,16 @@
   text-decoration: none;
   letter-spacing: 0.02em;
   position: relative;
+  display: block;
+  background-color: variables.$base-color-4;
+  color: variables.$base-color-3;
+  border-bottom: 1px solid variables.$base-color-2;
 
   @include mixins.mobile {
-    display: block;
-    background-color: variables.$base-color-4;
-    color: variables.$base-color-3;
     padding: 20px 20px 21px;
-    border-bottom: 1px solid variables.$base-color-2;
+  }
+
+  @include mixins.tablet {
+    padding: 32px 22px;
   }
 }

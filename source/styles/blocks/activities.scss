@@ -10,19 +10,26 @@
 .activities__link {
   color: variables.$base-color-3;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include mixins.mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 60px;
     height: 60px;
+  }
+
+  @include mixins.tablet {
+    width: 60px;
+    height: 80px;
   }
 }
 
 .activities__item-title {
-  @include mixins.mobile {
-    display: none;
+  display: none;
+
+  @include mixins.desktop {
+    display: block;
   }
 }
 

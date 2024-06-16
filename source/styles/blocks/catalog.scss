@@ -18,7 +18,14 @@
 .catalog__filters {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
+  @include mixins.mobile {
+    justify-content: space-between;
+  }
+
+  @include mixins.tablet {
+    justify-content: flex-end;
+  }
 }
 
 .catalog__sorting-title {
@@ -70,6 +77,14 @@
 .catalog__list {
   @include mixins.list-base;
   display: grid;
-  grid-template-rows: repeat(6, 420px);
-  gap: 20px;
+
+  @include mixins.mobile {
+    grid-template-rows: repeat(6, 420px);
+    gap: 20px;
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
