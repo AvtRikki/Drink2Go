@@ -261,7 +261,6 @@
     background-color: $base-color-4;
     box-shadow: none;
 
-
     &::before,
     &::after {
       display: none;
@@ -293,9 +292,13 @@
   .noUi-handle:active .noUi-touch-area {
     background-color: $base-color-1;
   }
+
+  /* stylelint-enable */
 }
 
 .form__range-slider[disabled] {
+  // Modification of the standard styles of the NO UI slider cannot follow to our naming styles
+  /* stylelint-disable */
   .noUi-connect {
     background-color: $base-color-5;
   }
@@ -305,6 +308,6 @@
     background-color: $background-color-1;
     pointer-events: none;
   }
-}
 
   /* stylelint-enable */
+}
