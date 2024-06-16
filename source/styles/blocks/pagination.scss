@@ -7,6 +7,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 40px;
+  gap: 10px;
 }
 
 .pagination__link {
@@ -21,6 +22,20 @@
   color: $base-color-1;
   cursor: pointer;
   border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    color: $base-color-4;
+    background-color: $alternate-color-1;
+  }
+
+  &:active {
+    background-color: $alternate-color-2;
+  }
+
+  &:disabled {
+    background-color: $alternate-color-4
+  }
 }
 
 .pagination__link--active {

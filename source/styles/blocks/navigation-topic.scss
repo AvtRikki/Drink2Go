@@ -23,4 +23,13 @@
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $alternate-color-1;
+  }
+
+  &:active {
+    color: $alternate-color-2;
+  }
 }

@@ -47,12 +47,25 @@
   justify-content: center;
 }
 
+.footer__developer-label {
+  @include mixins.font-info(12px, 16px);
+  color: $base-color-5;
+}
+
 .footer__developer-link {
   @include mixins.font-info(12px, 16px);
   position: relative;
   text-decoration: none;
   color: $base-color-5;
   padding-right: 20px;
+
+  &:hover {
+    color: $base-color-1;
+  }
+
+  &:active {
+    color: $alternate-color-2;
+  }
 
   &::after {
     content: "";

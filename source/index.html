@@ -220,19 +220,17 @@
           <form class="catalog__form form" id="catalog-filter" action="https://echo.htmlacademy.ru" method="get">
             <fieldset class="form__group">
               <legend class="form__title">Цена</legend>
-              <!-- <div class="form__slider-wrapper"> -->
-                <div class="form__slider"></div>
-                <div class="form__slider-inputs">
-                  <label class="form__filter-input-label">
-                    <span class="visually-hidden">Цена от.</span>
-                    <input class="form__slider-input form__slider-min" type="number" name="min-price" placeholder="0">
-                  </label>
-                  <label class="form__filter-input-label">
-                    <span class="visually-hidden">Цена до.</span>
-                    <input class="form__slider-input form__slider-max" type="number" name="max-price" placeholder="900" value="900">
-                  </label>
-                </div>
-              <!-- </div> -->
+              <div class="form__slider"></div>
+              <div class="form__slider-inputs">
+                <label class="form__filter-input-label">
+                  <span class="visually-hidden">Цена от.</span>
+                  <input class="form__slider-input form__slider-min" type="number" name="min-price" placeholder="0">
+                </label>
+                <label class="form__filter-input-label">
+                  <span class="visually-hidden">Цена до.</span>
+                  <input class="form__slider-input form__slider-max" type="number" name="max-price" placeholder="900" value="900">
+                </label>
+              </div>
             </fieldset>
             <fieldset class="form__group">
               <legend class="form__title">Наличие молока</legend>
@@ -459,6 +457,9 @@
             <li class="pagination__item">
               <a class="pagination__link pagination__link-previous link" href="#">
                 <span class="pagination__link--button">Назад</span>
+                <svg class="hero__page-button-icon" aria-hidden="true" focusable="false" width="6" height="10">
+                  <use href="icons/stack.svg#page-prev-icon"></use>
+                </svg>
               </a>
             </li>
             <li class="pagination__item">
@@ -473,6 +474,9 @@
             <li class="pagination__item">
               <a class="pagination__link pagination__link-next link" href="#">
                 <span class="pagination__link--button">Вперёд</span>
+                <svg class="hero__page-button-icon" aria-hidden="true" focusable="false" width="6" height="10">
+                  <use href="icons/stack.svg#page-next-icon"></use>
+                </svg>
               </a>
             </li>
           </ul>
@@ -583,9 +587,12 @@
           </li>
         </ul>
         <div class="footer__developer">
-          <a class="footer__developer-link" href="https://htmlacademy.ru/intensive/adaptive">
-            <span class="footer__developer-label">Разработано в HTML Academy</span>
-          </a>
+          <p class="footer__developer-label">
+            <span>Разработано в</span>
+            <a class="footer__developer-link" href="https://htmlacademy.ru/intensive/adaptive">
+              <span>HTML Academy</span>
+            </a>
+          </p>
         </div>
       </div>
     </footer>
