@@ -9,9 +9,9 @@
   display: grid;
   grid-template-columns: min-content 1fr min-content min-content;
   grid-template-areas:
-  "logo social"
-  "navigation navigation"
-  "developer developer";
+    "logo       social"
+    "navigation navigation"
+    "developer  developer";
 
   @include mixins.desktop {
     grid-template-columns: max-content 1fr;
@@ -97,7 +97,7 @@
     right: 0;
     width: 13px;
     height: 16px;
-    mask: url(../../icons/stack.svg#developer-icon) no-repeat center;
+    mask: url("../../icons/stack.svg#developer-icon") no-repeat center;
     background-color: $base-color-5;
   }
 

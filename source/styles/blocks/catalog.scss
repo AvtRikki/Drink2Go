@@ -11,11 +11,11 @@
   @include mixins.desktop {
     grid-template-columns: 318px 1fr;
     grid-template-areas:
-      "title title title"
+      "title       title       title"
       "description description description"
-      "form fiter filter"
-      "form cards cards"
-      "form pagination pagination";
+      "form        fiter       filter"
+      "form        cards       cards"
+      "form        pagination  pagination";
     column-gap: 30px;
     display: grid;
   }
@@ -61,7 +61,7 @@
   display: inline-block;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 10px;
     top: 50%;
@@ -69,11 +69,11 @@
     pointer-events: none;
     width: 10px;
     height: 10px;
-    background: url(../../icons/stack.svg#arrow-down-icon) no-repeat center;
+    background: url("../../icons/stack.svg#arrow-down-icon") no-repeat center;
   }
 
-  &:focus-within:after {
-    background: url(../../icons/stack.svg#arrow-up-icon) no-repeat center;
+  &:focus-within::after {
+    background: url("../../icons/stack.svg#arrow-up-icon") no-repeat center;
   }
 
   &:focus-within .catalog__sorting {
@@ -84,7 +84,6 @@
 .catalog__sorting {
   @include mixins.font-info(16px, 24px, 600);
   background-color: inherit;
-  -webkit-appearance: none;
   appearance: none;
   border: 0;
   color: $base-color-1;

@@ -41,7 +41,7 @@
   }
 
   &:disabled {
-    background-color: $alternate-color-4
+    background-color: $alternate-color-4;
   }
 }
 
@@ -51,13 +51,13 @@
   background-color: $background-color-transparent;
 }
 
-.pagination__link--button {
+.pagination__link-button {
   @include mixins.mobile {
     display: none;
   }
 }
 
-.pagination__link--icon {
+.pagination__link-icon {
   @include mixins.tablet {
     display: none;
   }

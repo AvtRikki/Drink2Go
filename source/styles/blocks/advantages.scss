@@ -2,7 +2,7 @@
 @use "../common/mixins.scss";
 
 .advantages {
-  padding: 50px 0 60px 0;
+  padding: 50px 0 60px;
 }
 
 .advantages__description {
@@ -72,19 +72,19 @@
 }
 
 .advantages__item--speed::before {
-  background: url(../../icons/stack.svg#time-icon) no-repeat center / cover;
+  background: url("./../icons/stack.svg#time-icon") no-repeat center / cover;
 }
 
 .advantages__item--convenience::before {
-  background: url(../../icons/stack.svg#shield-icon) no-repeat center / cover;
+  background: url("../../icons/stack.svg#shield-icon") no-repeat center / cover;
 }
 
 .advantages__item--cheerfulness::before {
-  background: url(../../icons/stack.svg#sparc-icon) no-repeat center / cover;
+  background: url("../../icons/stack.svg#sparc-icon") no-repeat center / cover;
 }
 
 .advantages__item--ecology::before {
-  background: url(../../icons/stack.svg#leaf-icon) no-repeat center / cover;;
+  background: url("../../icons/stack.svg#leaf-icon") no-repeat center / cover;
 }
 
 .advantages__item-title {

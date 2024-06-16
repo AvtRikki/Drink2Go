@@ -2,7 +2,6 @@
 @use "../common/mixins.scss";
 
 .form {
-
   @include mixins.tablet {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -240,6 +239,8 @@
   border-radius: 0;
   box-shadow: none;
 
+  // Modification of the standard styles of the NO UI slider cannot follow to our naming styles
+  /* stylelint-disable */
   .noUi-connects {
     overflow: visible;
   }
@@ -259,6 +260,7 @@
     border-radius: 50%;
     background-color: $base-color-4;
     box-shadow: none;
+
 
     &::before,
     &::after {
@@ -304,3 +306,5 @@
     pointer-events: none;
   }
 }
+
+  /* stylelint-enable */
