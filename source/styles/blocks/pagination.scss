@@ -1,11 +1,20 @@
 @use "../common/variables.scss";
 @use "../common/mixins.scss";
 
+.pagination {
+  @include mixins.mobile {
+    padding-top: 44px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 73px;
+  }
+}
+
 .pagination__list {
   @include mixins.list-base;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 44px;
   gap: 20px;
 
   @include mixins.mobile {
@@ -20,9 +29,9 @@
 .pagination__link {
   @include mixins.font-info(16px, 24px);
   display: block;
+  padding: 8px;
   min-height: 40px;
   min-width: 40px;
-  padding: 8px;
   text-align: center;
   text-decoration: none;
   background-color: $base-color-4;
@@ -42,6 +51,13 @@
 
   &:disabled {
     background-color: $alternate-color-4;
+  }
+}
+
+.pagination__link-next,
+.pagination__link-previous {
+  @include mixins.tablet {
+    padding: 8px 20px;
   }
 }
 

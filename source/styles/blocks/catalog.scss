@@ -2,9 +2,17 @@
 @use "../common/mixins.scss";
 
 .catalog {
-  padding-top: 49px;
   padding-bottom: 44px;
   background-color: $background-color-1;
+
+  @include mixins.mobile {
+    padding-top: 49px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 79px;
+    padding-bottom: 87px;
+  }
 }
 
 .catalog__container {
@@ -28,12 +36,19 @@
 }
 
 .catalog__description {
-  @include mixins.font-info(24px, 36px, 700);
   grid-area: description;
   margin: 0;
   padding: 0;
   text-align: center;
   margin-bottom: 20px;
+
+  @include mixins.mobile  {
+    @include mixins.font-info(24px, 36px, 700);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(42px, 64px, 700);
+  }
 }
 
 .catalog__form {
@@ -58,23 +73,33 @@
 
 .catalog__sorting-title {
   @include mixins.font-info(16px, 24px, 600);
+
+  @include mixins.tablet {
+    margin-right: 11px;
+  }
 }
 
 .catalog__sorting-wrapper {
   position: relative;
   display: inline-block;
-  padding: 9px;
 
   &::after {
     content: "";
     position: absolute;
-    right: 19px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
     width: 10px;
     height: 10px;
     background: url("../../icons/stack.svg#arrow-down-icon") no-repeat center;
+
+    @include mixins.mobile {
+      right: 19px;
+    }
+
+    @include mixins.tablet {
+      right: 10px;
+    }
   }
 
   &:focus-within::after {
@@ -83,6 +108,14 @@
 
   &:focus-within .catalog__sorting {
     background-color: $base-color-4;
+  }
+
+  @include mixins.mobile {
+    padding: 9px;
+  }
+
+  @include mixins.tablet {
+    padding: 0;
   }
 }
 
@@ -115,6 +148,7 @@
   @include mixins.tablet {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    padding-top: 13px;
   }
 
   @include mixins.desktop {

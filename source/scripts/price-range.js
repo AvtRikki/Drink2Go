@@ -1,6 +1,6 @@
 const PRICE_CONFIG = {
   MIN: 0,
-  MAX: 980,
+  MAX: 999,
   STEP: 1,
   START: [0, 900]
 };

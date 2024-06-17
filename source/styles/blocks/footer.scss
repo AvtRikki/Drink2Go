@@ -2,7 +2,13 @@
 @use "../common/mixins.scss";
 
 .footer {
-  padding-top: 17px;
+  @include mixins.mobile {
+    padding-top: 17px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 37px;
+  }
 }
 
 .footer__container {
@@ -49,18 +55,21 @@
   @include mixins.tablet {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
 .footer__navigation-list::before,
 .footer__navigation-item:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 100vw;
-  height: 1px;
-  background-color: $base-color-2;
-  transform: translateX(-50%);
+  @include mixins.mobile {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 100vw;
+    height: 1px;
+    background-color: $base-color-2;
+    transform: translateX(-50%);
+  }
 }
 
 

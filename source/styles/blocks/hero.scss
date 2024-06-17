@@ -16,6 +16,7 @@
   }
 
   @include mixins.tablet {
+    padding-top: 20px;
     order: 2;
   }
 }
@@ -46,17 +47,17 @@
   @include mixins.tablet {
     &:nth-child(1n) {
       background-color: unset;
-      background-image: linear-gradient(0deg, transparent 188px, $background-color-2 188px);
+      background-image: linear-gradient(0deg, transparent 213px, $background-color-2 213px);
     }
 
     &:nth-child(2n) {
       background-color: unset;
-      background-image: linear-gradient(0deg, transparent 188px, $background-color-3 188px);
+      background-image: linear-gradient(0deg, transparent 213px, $background-color-3 213px);
     }
 
     &:nth-child(3n) {
       background-color: unset;
-      background-image: linear-gradient(0deg, transparent 188px, $background-color-4 188px);
+      background-image: linear-gradient(0deg, transparent 213px, $background-color-4 213px);
     }
   }
 
@@ -105,7 +106,7 @@
   }
 
   @include mixins.tablet {
-    padding: 60px 20px 20px;
+    padding: 60px 50px 20px;
   }
 
   @include mixins.desktop {
@@ -121,12 +122,19 @@
 }
 
 .hero__title {
-  @include mixins.font-info(36px, 48px, 700);
   margin: 4px 0 10px;
   letter-spacing: 0.02em;
 
   @include mixins.mobile {
+    @include mixins.font-info(36px, 48px, 700);
     text-align: center;
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(56px, 80px, 700);
+    text-align: center;
+    padding-bottom: 6px;
+    margin-left: 1px;
   }
 
   @include mixins.desktop {
@@ -138,6 +146,11 @@
   margin: 0 0 20px;
 
   @include mixins.mobile {
+    text-align: center;
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(20px, 32px);
     text-align: center;
   }
 
@@ -166,6 +179,18 @@
 .hero__page-button-icon {
   @include mixins.mobile {
     margin-left: -2px;
+  }
+}
+
+.hero__page-button--before {
+  @include mixins.tablet {
+    padding-bottom: 213px;
+  }
+}
+
+.hero__page-button--after {
+  @include mixins.tablet {
+    padding-top: 213px;
   }
 }
 
@@ -251,6 +276,10 @@
 
 .hero__make-order {
   @include mixins.mobile {
+    @include mixins.font-info(16px, 24px, 400);
+  }
+
+  @include mixins.tablet {
     @include mixins.font-info(16px, 24px, 400);
   }
 }

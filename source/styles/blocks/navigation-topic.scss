@@ -3,22 +3,42 @@
 
 .navigation-topic {
   padding-top: 6px;
-  margin-bottom: 27px;
+
+  @include mixins.mobile {
+    margin-bottom: 27px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 6px;
+  }
 }
 
 .navigation-topic__title {
   @include mixins.font-info(14px, 20px, 700);
   color: $base-color-1;
-  padding: 15px 0;
+
   letter-spacing: 0.02em;
   margin: 0;
   margin-bottom: 2px;
+
+  @include mixins.mobile {
+    padding: 15px 0;
+  }
+
+  @include mixins.tablet {
+    padding: 4px 0;
+  }
 }
 
 .navigation-topic__list {
   @include mixins.list-base;
   position: relative;
   margin-bottom: 27px;
+
+  @include mixins.tablet {
+    margin-bottom: 0px;
+    margin-top: 13px;
+  }
 }
 
 .navigation-topic__item {

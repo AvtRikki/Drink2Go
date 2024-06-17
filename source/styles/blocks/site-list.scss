@@ -25,7 +25,7 @@
 .site-list__item--active {
   @include mixins.tablet {
     border-bottom: 2px solid $base-color-1;
-    margin-top: -2px;
+    margin-top: -1px;
   }
 }
 
@@ -52,6 +52,9 @@
   }
 
   @include mixins.tablet {
-    padding: 32px 22px;
+    padding-top: 31px;
+    padding-bottom: 31px;
+    padding-left: 23px;
+    padding-right: 17px;
   }
 }

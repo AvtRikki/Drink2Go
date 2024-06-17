@@ -5,8 +5,8 @@
   @include mixins.tablet {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    row-gap: 40px;
+    column-gap: 30px;
+    row-gap: 10px;
   }
 
   @include mixins.desktop {
@@ -60,7 +60,6 @@
 
 .form__slider-input {
   @include mixins.font-info(16px, 24px, 500);
-  width: 118px;
   height: 40px;
   text-align: center;
   border: 2px solid $alternate-color-1;
@@ -92,6 +91,14 @@
     border: 2px solid $alternate-color-4;
     color: $base-color-5;
     background: $background-color-1;
+  }
+
+  @include mixins.mobile {
+    width: 118px;
+  }
+
+  @include mixins.tablet {
+    width: 87px;
   }
 }
 
@@ -243,6 +250,10 @@
   border-width: 1px 0;
   border-radius: 0;
   box-shadow: none;
+
+  @include mixins.tablet {
+    margin-bottom: 31px;
+  }
 
   // Modification of the standard styles of the NO UI slider cannot follow to our naming styles
   /* stylelint-disable */
