@@ -24,14 +24,12 @@
     "developer  developer";
 
   @include mixins.desktop {
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: 46px min-content 82px min-content;
+    grid-template:
+      "logo navigation" 46px
+      "description navigation" min-content
+      "social navigation" 82px
+      "developer developer" min-content / max-content 1fr;
     column-gap: 62px;
-    grid-template-areas:
-      "logo        navigation"
-      "description navigation"
-      "social      navigation"
-      "developer   developer";
   }
 }
 
