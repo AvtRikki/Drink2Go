@@ -210,6 +210,8 @@
 }
 
 .hero__page-button--after {
+  transform: rotate(180deg);
+
   @include mixins.tablet {
     padding-top: 213px;
   }
@@ -257,10 +259,6 @@
   &:disabled {
     color: $base-color-5;
   }
-}
-
-.hero__page-button--after {
-  transform: rotate(180deg);
 }
 
 .hero__pagination {

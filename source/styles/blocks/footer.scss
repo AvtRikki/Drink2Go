@@ -25,13 +25,13 @@
 
   @include mixins.desktop {
     grid-template-columns: max-content 1fr;
+    grid-template-rows: 46px min-content 82px min-content;
     column-gap: 62px;
     grid-template-areas:
       "logo        navigation"
       "description navigation"
       "social      navigation"
       "developer   developer";
-    grid-template-rows: 46px min-content 82px min-content;
   }
 }
 
@@ -65,7 +65,7 @@
 }
 
 .footer__navigation-list::before,
-.footer__navigation-item:after {
+.footer__navigation-item::after {
   @include mixins.mobile {
     content: "";
     position: absolute;

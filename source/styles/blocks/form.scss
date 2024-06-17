@@ -5,8 +5,7 @@
   @include mixins.tablet {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 10px;
+    gap: 10px 30px;
   }
 
   @include mixins.desktop {
@@ -21,7 +20,7 @@
   border: none;
 }
 
-.form__group--price  {
+.form__group--price {
   @include mixins.desktop {
     margin-top: 16px;
   }

@@ -36,7 +36,7 @@
   margin-bottom: 27px;
 
   @include mixins.tablet {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-top: 13px;
   }
 }
