@@ -3,11 +3,11 @@
 
 .footer {
   @include mixins.mobile {
-    padding-top: 17px;
+    padding-top: 22px;
   }
 
   @include mixins.tablet {
-    padding-top: 37px;
+    padding-top: 42px;
   }
 
   @include mixins.desktop {
@@ -82,6 +82,14 @@
   padding-top: 3px;
   display: flex;
   justify-content: center;
+
+  @include mixins.mobile {
+    margin-bottom: 18px;
+  }
+
+  @include mixins.tablet {
+    margin-bottom: 28px;
+  }
 }
 
 .footer__developer-label {

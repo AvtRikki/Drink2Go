@@ -7,18 +7,22 @@
   }
 
   @include mixins.tablet {
-    padding-top: 25px;
+    padding-top: 60px;
     padding-bottom: 100px;
   }
 
   @include mixins.desktop {
-    padding-top: 90px;
+    padding-top: 100px;
     padding-bottom: 119px;
   }
 }
 
 .advantages__title {
   margin-bottom: 5px;
+
+  @include mixins.tablet {
+    margin-top: 0;
+  }
 }
 
 .advantages__description {
