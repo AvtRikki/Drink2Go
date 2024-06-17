@@ -43,6 +43,12 @@
 
 .navigation-topic__item {
   margin-bottom: 16px;
+
+  @include mixins.desktop {
+    &:last-child {
+      margin-bottom: 5px;
+    }
+  }
 }
 
 .navigation-topic__item-link {

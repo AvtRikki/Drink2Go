@@ -13,6 +13,13 @@
     padding-top: 79px;
     padding-bottom: 87px;
   }
+
+  @include mixins.desktop {
+    padding-top: 100px;
+    padding-left: 33px;
+    padding-right: 47px;
+    padding-bottom: 119px;
+  }
 }
 
 .catalog__container {
@@ -48,6 +55,10 @@
 
   @include mixins.tablet {
     @include mixins.font-info(42px, 64px, 700);
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 24px;
   }
 }
 

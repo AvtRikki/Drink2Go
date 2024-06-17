@@ -8,6 +8,11 @@
   text-transform: uppercase;
   display: flex;
   flex-wrap: wrap;
+  max-width: 600px;
+
+  @include mixins.desktop {
+    gap: 20px;
+  }
 }
 
 .site-list__item {
@@ -45,10 +50,10 @@
   display: block;
   background-color: variables.$base-color-4;
   color: variables.$base-color-3;
-  border-bottom: 1px solid variables.$base-color-2;
 
   @include mixins.mobile {
     padding: 20px 20px 21px;
+    border-bottom: 1px solid variables.$base-color-2;
   }
 
   @include mixins.tablet {
@@ -56,5 +61,6 @@
     padding-bottom: 31px;
     padding-left: 23px;
     padding-right: 17px;
+    border-bottom: none;
   }
 }

@@ -9,6 +9,10 @@
   @include mixins.tablet {
     padding-top: 73px;
   }
+
+  @include mixins.desktop {
+    padding-top: 61px;
+  }
 }
 
 .pagination__list {

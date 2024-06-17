@@ -21,6 +21,12 @@
   border: none;
 }
 
+.form__group--price  {
+  @include mixins.desktop {
+    margin-top: 16px;
+  }
+}
+
 .form__title {
   @include mixins.font-info(16px, 24px, 600);
   margin-bottom: 20px;
@@ -32,6 +38,10 @@
   @include mixins.list-base;
   text-align: left;
   margin-bottom: 30px;
+
+  @include mixins.desktop {
+    margin-bottom: 20px;
+  }
 }
 
 .form__filter-items--manufacturer {
@@ -56,6 +66,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 8px 2px;
+
+  @include mixins.desktop {
+    margin-bottom: 21px;
+  }
 }
 
 .form__slider-input {
@@ -100,6 +114,10 @@
   @include mixins.tablet {
     width: 87px;
   }
+
+  @include mixins.desktop {
+    width: 134px;
+  }
 }
 
 .form__group--buttons {
@@ -115,10 +133,18 @@
     grid-column: 1 / -1;
     justify-content: center;
   }
+
+  @include mixins.desktop {
+    justify-content: stretch;
+  }
 }
 
 .form__button {
   @include mixins.font-info(16px, 24px);
+
+  @include mixins.desktop {
+    width: 100%;
+  }
 }
 
 .form__radio-mark {
@@ -253,6 +279,10 @@
 
   @include mixins.tablet {
     margin-bottom: 31px;
+  }
+
+  @include mixins.desktop {
+    margin-bottom: 33px;
   }
 
   // Modification of the standard styles of the NO UI slider cannot follow to our naming styles
